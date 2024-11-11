@@ -69,10 +69,7 @@ interface AutoSpacingConfig {
   spacingItems?: string[];
 }
 
-export default function mdAutoSpacing(
-  md: MarkdownIt,
-  config: AutoSpacingConfig
-) {
+function mdAutoSpacing(md: MarkdownIt, config: AutoSpacingConfig = {}) {
   const {
     pangu = true,
     mojikumi = false,
@@ -114,3 +111,5 @@ export default function mdAutoSpacing(
     };
   });
 }
+
+export = mdAutoSpacing;
