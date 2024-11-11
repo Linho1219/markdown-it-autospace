@@ -1,5 +1,8 @@
 # markdown-it-autospace
 
+![NPM version](https://img.shields.io/npm/v/markdown-it-autospace) ![License](https://img.shields.io/npm/l/markdown-it-autospace) ![NPM Last Update](https://img.shields.io/npm/last-update/markdown-it-autospace)
+![npm downloads](https://img.shields.io/npm/dy/markdown-it-autospace)
+
 一款可配置的 Markdown-it 插件，用于优化中文排版。
 
 由于 [pangu.js](https://github.com/vinta/pangu.js/) 没有对 Markdown 的支持，[markdown-it-pangu](https://github.com/Shigma/markdown-it-pangu) 仍依赖过时项目 VuePress，且能实现标点挤压的项目 [赫蹏](https://github.com/sivan/heti) 只能在前端运行，故博采众长，编写此插件。
