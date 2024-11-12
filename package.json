@@ -1,12 +1,12 @@
 {
   "name": "markdown-it-autospace",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Markdown-it 中文排版美化插件，包含 pangu 和标点挤压",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Linho1219/markdown-it-autospace.git"
+    "url": "https://github.com/Linho1219/markdown-it-autospace.git"
   },
   "keywords": [
     "markdown-it",
@@ -28,6 +28,9 @@
     "url": "https://github.com/Linho1219/markdown-it-autospacing/issues"
   },
   "homepage": "https://github.com/Linho1219/markdown-it-autospacing#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "typescript": "^5.6.3"
   },
