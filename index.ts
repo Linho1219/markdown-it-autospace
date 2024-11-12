@@ -106,10 +106,10 @@ function mdAutoSpacing(md: MarkdownIt, config: AutoSpacingConfig = {}) {
       return;
     }
     md.renderer.rules[item] = (tokens, index, options, env, self) => {
-      const content = tokens[index].content || "";
+      const content = tokens[index].content ?? "";
       const prevChar = getPrevChar(tokens, index);
       const prefix = pangulib
-        .spacing(prevChar + content.charAt(0))
+        .spacing(prevChar + (content.at(0) ?? ""))
         .slice(prevChar.length, -1);
       return prefix + orig(tokens, index, options, env, self);
     };
