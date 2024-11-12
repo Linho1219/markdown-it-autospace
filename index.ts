@@ -90,7 +90,11 @@ function mdAutoSpacing(md: MarkdownIt, config: AutoSpacingConfig = {}) {
     } else {
       result = escapeHtml(tokens[index].content);
     }
-    if (mojikumi && typeof tokens[index - 1] === "undefined")
+    if (
+      mojikumi &&
+      (typeof tokens[index - 1] === "undefined" ||
+        tokens[index - 1].type === "softbreak")
+    )
       return punctuationAdjustStart(result);
     else return result;
   };
