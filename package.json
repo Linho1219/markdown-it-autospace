@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-autospace",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Markdown-it 中文排版美化插件，包含 pangu 和标点挤压",
   "main": "index.js",
   "types": "index.d.ts",
