@@ -19,8 +19,8 @@ const REG_BD_STOP = `。．，、：；！‼？⁇`;
 const REG_BD_SEP = `·・‧`;
 const REG_BD_OPEN = `「『（《〈【〖〔［｛`;
 const REG_BD_CLOSE = `」』）》〉】〗〕］｝`;
-const REG_BD_START = `${REG_BD_OPEN}${REG_BD_CLOSE}`;
-const REG_BD_END = `${REG_BD_STOP}${REG_BD_OPEN}${REG_BD_CLOSE}`;
+const REG_BD_SPACE_LEFT = `${REG_BD_OPEN}`;
+const REG_BD_SPACE_RIGHT = `${REG_BD_STOP}${REG_BD_CLOSE}`;
 const REG_BD_HALF_OPEN = `“‘`;
 const REG_BD_HALF_CLOSE = `”’`;
 const REG_BD_HALF_START = `${REG_BD_HALF_OPEN}${REG_BD_HALF_CLOSE}`;
@@ -31,8 +31,12 @@ const getWrapper = (classList: string, text: string) =>
 const punctuationAdjust = (str: string) =>
   str
     .replace(
+      new RegExp(`([${REG_BD_SPACE_RIGHT}])(?=[${REG_BD_SPACE_LEFT}])`, "g"),
+      (substr) => getWrapper("punc-full", substr)
+    )
+    .replace(
       new RegExp(
-        `([${REG_BD_STOP}])(?=[${REG_BD_START}])|([${REG_BD_OPEN}])(?=[${REG_BD_OPEN}])|([${REG_BD_CLOSE}])(?=[${REG_BD_END}])`,
+        `([${REG_BD_SPACE_LEFT}])(?=[${REG_BD_SPACE_LEFT}])|([${REG_BD_SPACE_RIGHT}])(?=[${REG_BD_SPACE_RIGHT}])`,
         "g"
       ),
       (substr) => getWrapper("punc-half", substr)

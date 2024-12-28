@@ -1,0 +1,18 @@
+punc-spacing {
+  display: inline;
+}
+.punc-half {
+  margin-inline-end: -1em;
+}
+.punc-half {
+  margin-inline-end: -0.5em;
+}
+.punc-quarter {
+  margin-inline-end: -0.25em;
+}
+.punc-before-less {
+  margin-inline-start: -0.4em;
+}
+.punc-before-more {
+  margin-inline-start: -0.5em;
+}

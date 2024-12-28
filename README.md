@@ -80,6 +80,9 @@ md.use(mdAutoSpacing, {
 >   display: inline;
 > }
 > .punc-half {
+>   margin-inline-end: -1em;
+> }
+> .punc-half {
 >   margin-inline-end: -0.5em;
 > }
 > .punc-quarter {
@@ -89,9 +92,11 @@ md.use(mdAutoSpacing, {
 >   margin-inline-start: -0.4em;
 > }
 > .punc-before-more {
->   margin-inline-start: -0.6em;
+>   margin-inline-start: -0.5em;
 > }
 > ```
+> 
+> 你也可以直接引入 `markdown-it-autospace/spacing.css`。空隙大小可按个人喜好调整。
 
 此功能的实现离不开 [赫蹏](https://github.com/sivan/heti)。
 
@@ -99,6 +104,6 @@ md.use(mdAutoSpacing, {
 
 `string[]`，默认值为 `["code_inline", "math_inline"]`。
 
-指定需要在前后添加空格的 Markdown-it token。默认对行内代码块与行内公式启用。如不需要此功能，请传入 `[]`。
+指定需要在前后添加空格的 Markdown-it token。留空时默认对行内代码块与行内公式启用，如不需要此功能，请传入 `[]`。
 
 此功能的实现离不开 [markdown-it-pangu](https://github.com/Shigma/markdown-it-pangu)。
