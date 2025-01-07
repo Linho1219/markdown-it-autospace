@@ -31,14 +31,15 @@ const getWrapper = (classList: string, text: string) =>
 const punctuationAdjust = (str: string) =>
   str
     .replace(
+      new RegExp(`([${REG_BD_SPACE_RIGHT}])(?=[${REG_BD_SPACE_RIGHT}])`, "g"),
+      (substr) => getWrapper("punc-half", substr)
+    )
+    .replace(
       new RegExp(`([${REG_BD_SPACE_RIGHT}])(?=[${REG_BD_SPACE_LEFT}])`, "g"),
       (substr) => getWrapper("punc-full", substr)
     )
     .replace(
-      new RegExp(
-        `([${REG_BD_SPACE_LEFT}])(?=[${REG_BD_SPACE_LEFT}])|([${REG_BD_SPACE_RIGHT}])(?=[${REG_BD_SPACE_RIGHT}])`,
-        "g"
-      ),
+      new RegExp(`([${REG_BD_SPACE_LEFT}])(?=[${REG_BD_SPACE_LEFT}])`, "g"),
       (substr) => getWrapper("punc-half", substr)
     )
     .replace(
